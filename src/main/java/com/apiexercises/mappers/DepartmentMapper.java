@@ -12,7 +12,7 @@ public interface DepartmentMapper extends MapperTemplate{
 
     //SQL queries
     String GET_ALL = "select * from departments";
-    String GET_BY_ID = "select * from departments where id = #{id}";
+    String GET_BY_ID = "select * from departments where dept_no = #{id}";
 
     //returns an array list of all departments
     @Select(GET_ALL)
@@ -21,15 +21,6 @@ public interface DepartmentMapper extends MapperTemplate{
 
     //returns the Department that matches the id passed down from the URI through the Resource and Service
     @Select(GET_BY_ID)
-    Department getById(String id);
-
-    //returns the Department that matches the id passed down from the URI through the Resource and Service
-    //Department uses a String for the id, so this won't be used
     @Override
-    Department getById(int id);
-
-
-
-
-
+    Department getByIdString(String id);
 }

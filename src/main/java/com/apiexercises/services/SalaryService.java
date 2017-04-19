@@ -21,7 +21,7 @@ public class SalaryService implements ServiceTemplate{
     }
 
     //calls the mapper method to return the Salary that matches the id passed down from the URI through the Resource
-    public Salary getById(int id){
+    public ArrayList<Salary> getById(int id){
         return mapper.getById(id);
     }
 }

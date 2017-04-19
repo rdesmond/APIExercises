@@ -12,7 +12,7 @@ public interface EmployeeMapper extends MapperTemplate{
 
     //SQL queries
     String GET_ALL = "select * from employees";
-    String GET_BY_ID = "select * from employees where id = #{id}";
+    String GET_BY_ID = "select * from employees where emp_no = #{id}";
 
     //returns an array list of all employees
     @Select(GET_ALL)

@@ -19,8 +19,7 @@ import static com.apiexercises.utilities.HTTPStatusCode.OK;
  */
 @RestController
 @RequestMapping ("/departments")
-public class DepartmentResource //extends ResourceTemplate
-{
+public class DepartmentResource extends ResourceTemplate{
 
     //Uses Spring to control the creation of a service object
     @Autowired
@@ -40,15 +39,11 @@ public class DepartmentResource //extends ResourceTemplate
 
     //calls the service method and assigns the returned object to the data parameter in the Response controller
     @RequestMapping("/{id}")
-    public Response getById(@PathVariable(value="id")String id){
-            Department department = service.getById(id);
+    @Override
+    public Response getByIdString(@PathVariable(value="id")String id){
+            Department department = service.getByIdString(id);
 
             //add in some if statements with errors
             return new Response(OK, department);
         }
-    //Department is the only model with a String for the id. This class requires an int method, so this returns an error
-    //code if that happens on department
-//    public Response getById(@PathVariable(value="idNo")int id){
-//        return new Response(TEAPOT);
-//    }
 }

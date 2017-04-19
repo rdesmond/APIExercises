@@ -12,7 +12,7 @@ public interface SalaryMapper extends MapperTemplate{
 
     //SQL queries
     String GET_ALL = "select * from salaries";
-    String GET_BY_ID = "select * from salaries where id = #{id}";
+    String GET_BY_ID = "select * from salaries where emp_no = #{id}";
 
     //returns an array list of all salaries
     @Select(GET_ALL)
@@ -22,5 +22,5 @@ public interface SalaryMapper extends MapperTemplate{
     //returns the Salary that matches the id passed down from the URI through the Resource and Service
     @Select(GET_BY_ID)
     @Override
-    Salary getById(int id);
+    ArrayList<Salary> getById(int id);
 }

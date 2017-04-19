@@ -1,6 +1,7 @@
 package com.apiexercises.resources;
 
 import com.apiexercises.models.Response;
+import com.apiexercises.utilities.HTTPError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,11 @@ public abstract class ResourceTemplate {
      * @param id received as a parameter in the URI
      * @return Response object with a Status Code and an ArrayList assigned to the data variable
      */
-    abstract Object getById(@PathVariable(value="id")int id);
+    Object getById(@PathVariable(value="id")int id){
+        return new HTTPError();
+    }
+    Object getByIdString(@PathVariable(value="id")String id){
+        return new HTTPError();
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.apiexercises.services;
 
+import com.apiexercises.utilities.HTTPError;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,5 +24,10 @@ public interface ServiceTemplate<T extends Object> {
      * @param id passed down from the URI through the Resource
      * @return Object that matches the id
      */
-    public Object getById(int id);
+    default Object getById(int id){
+        return new HTTPError();
+    }
+    default Object getByIdString(String id){
+        return new HTTPError();
+    }
 }

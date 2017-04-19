@@ -38,7 +38,7 @@ public class SalaryResource extends ResourceTemplate{
     @RequestMapping("/{id}")
     @Override
     public Response getById(@PathVariable(value="id")int id) {
-        Salary salary = service.getById(id);
+        ArrayList<Salary> salary = service.getById(id);
 
         //add in some if statements with errors
         return new Response(HTTPStatusCode.OK, salary);

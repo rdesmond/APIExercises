@@ -21,11 +21,8 @@ public class DepartmentService implements ServiceTemplate{
     }
 
     //calls the mapper method to return the Department that matches the id passed down from the URI through the Resource
-    public Department getById(int id){
-        return mapper.getById(id);
-    }
-
-    public Department getById(String id){
-        return mapper.getById(id);
+    @Override
+    public Department getByIdString(String id){
+        return mapper.getByIdString(id);
     }
 }

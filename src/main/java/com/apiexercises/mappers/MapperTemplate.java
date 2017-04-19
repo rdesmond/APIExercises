@@ -1,5 +1,6 @@
 package com.apiexercises.mappers;
 
+import com.apiexercises.utilities.HTTPError;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.ArrayList;
@@ -23,5 +24,10 @@ public interface MapperTemplate<T extends Object> {
      * @param id passed down from the URI through the Resource and Service
      * @return Object that matches the id
      */
-    Object getById(int id);
+    default Object getById(int id){
+       return new HTTPError();
+    }
+    default Object getByIdString(String id){
+        return new HTTPError();
+    }
 }
