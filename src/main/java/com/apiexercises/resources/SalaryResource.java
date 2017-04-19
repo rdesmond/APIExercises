@@ -1,6 +1,6 @@
 package com.apiexercises.resources;
 
-import com.apiexercises.models.Response;
+import com.apiexercises.utilities.Response;
 import com.apiexercises.models.Salary;
 import com.apiexercises.services.SalaryService;
 import com.apiexercises.utilities.HTTPStatusCode;

@@ -1,7 +1,7 @@
 package com.apiexercises.resources;
 
 import com.apiexercises.models.Employee;
-import com.apiexercises.models.Response;
+import com.apiexercises.utilities.Response;
 import com.apiexercises.services.EmployeeService;
 import com.apiexercises.utilities.HTTPStatusCode;
 import org.springframework.beans.factory.annotation.Autowired;

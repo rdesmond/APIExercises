@@ -1,7 +1,7 @@
 package com.apiexercises.utilities;
 
 /**
- * This demonstrates a enum
+ * Matches up with the Gender data type in the database
  */
 
 public enum Gender {

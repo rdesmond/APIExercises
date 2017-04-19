@@ -1,14 +1,11 @@
-package com.apiexercises.models;
-
-import com.apiexercises.utilities.HTTPStatusCode;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package com.apiexercises.utilities;
 
 /**
  * Generic class that is used as a return type for methods in the Resource class
  * This allows the HTTP request to return an object, a status, and a message
  * @param <T>
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Response<T extends Object> {
 
     private Object data;
@@ -16,7 +13,7 @@ public class Response<T extends Object> {
     private String message;
 
     //Method that takes in an HTTPStatusCode and determines the message accordingly.
-    public String setMessage(HTTPStatusCode status) {
+    private String setMessage(HTTPStatusCode status) {
         switch (status){
             case OK: return "Success";
             case TEAPOT: return "I'm a little teapot, short and stout. There's an error in your URI";

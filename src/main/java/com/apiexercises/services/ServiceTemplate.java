@@ -1,6 +1,7 @@
 package com.apiexercises.services;
 
 import com.apiexercises.utilities.HTTPError;
+import com.apiexercises.utilities.HTTPStatusCode;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,12 +23,12 @@ public interface ServiceTemplate<T extends Object> {
     /**
      * This method calls the getById method on the autowired mapper object
      * @param id passed down from the URI through the Resource
-     * @return Object that matches the id
+     * @return HTTPError Exception - These methods are overridden in the implementation, based on String vs int id
      */
     default Object getById(int id){
-        return new HTTPError();
+        return new HTTPError(HTTPStatusCode.TEAPOT);
     }
     default Object getByIdString(String id){
-        return new HTTPError();
+        return new HTTPError(HTTPStatusCode.TEAPOT);
     }
 }

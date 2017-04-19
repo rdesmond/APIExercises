@@ -1,7 +1,7 @@
 package com.apiexercises.resources;
 
 import com.apiexercises.models.Department;
-import com.apiexercises.models.Response;
+import com.apiexercises.utilities.Response;
 import com.apiexercises.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,7 +37,7 @@ public class DepartmentResource extends ResourceTemplate{
         }
     }
 
-    //calls the service method and assigns the returned object to the data parameter in the Response controller
+    //calls the service method and assigns the returned ArrayList to the data parameter in the Response controller
     @RequestMapping("/{id}")
     @Override
     public Response getByIdString(@PathVariable(value="id")String id){

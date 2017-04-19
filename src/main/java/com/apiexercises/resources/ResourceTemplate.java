@@ -1,7 +1,8 @@
 package com.apiexercises.resources;
 
-import com.apiexercises.models.Response;
+import com.apiexercises.utilities.Response;
 import com.apiexercises.utilities.HTTPError;
+import com.apiexercises.utilities.HTTPStatusCode;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,13 +25,13 @@ public abstract class ResourceTemplate {
     /**
      * This method calls the getById method on the service and passes it as a parameter to the Response controller
      * @param id received as a parameter in the URI
-     * @return Response object with a Status Code and an ArrayList assigned to the data variable
+     * @return HTTPError Exception - These methods are overridden in the implementation, based on String vs int id
      */
     Object getById(@PathVariable(value="id")int id){
-        return new HTTPError();
+        return new HTTPError(HTTPStatusCode.TEAPOT);
     }
     Object getByIdString(@PathVariable(value="id")String id){
-        return new HTTPError();
+        return new HTTPError(HTTPStatusCode.TEAPOT);
     }
 
 }
