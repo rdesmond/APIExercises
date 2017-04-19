@@ -25,15 +25,21 @@ public class Demonstration {
 
 
 //Method that casts 4 data types
-    public void castingTypes(double d1, Object object1){
+    //uses a try-catch statement to return an error message if unsuccessful
+    public int castingTypes(double d1, Object object1) {
+        try {
             //double to int
-         i1 = (int)d1;
+            i1 = (int) d1;
             //int to byte
-         b1 = (byte)i1;
+            b1 = (byte) i1;
             //byte to char
-         c1 = (char)b1;
+            c1 = (char) b1;
             //Object to String
-         string1 = (String)object1;
+            string1 = (String) object1;
+            return 200;
+        } catch (Exception e) {
+            return 418;
+        }
     }
 //Method that demonstrates flow control
     /*an object called demo is passed to this method

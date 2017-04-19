@@ -1,12 +1,17 @@
 package com.apiexercises.models;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Date;
+/**
+ * POJO that corresponds to the dept_manager table in the employees database
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Dept_Manager {
-    int emp_no;
-    int dept_no;
-    Date from_date;
-    Date to_date;
+    private int emp_no;
+    private int dept_no;
+    private Date from_date;
+    private Date to_date;
 
     public int getEmp_no() {
         return emp_no;

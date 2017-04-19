@@ -1,16 +1,20 @@
 package com.apiexercises.models;
 
 import com.apiexercises.utilities.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Date;
-
+/**
+ * POJO that corresponds to the employees table in the employees database
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Employee {
-    int emp_no;
-    Date birth_date;
-    String first_name;
-    String last_name;
-    Gender gender;
-    Date hire_date;
+    private int emp_no;
+    private Date birth_date;
+    private String first_name;
+    private String last_name;
+    private Gender gender;
+    private Date hire_date;
 
     public int getEmp_no() {
         return emp_no;

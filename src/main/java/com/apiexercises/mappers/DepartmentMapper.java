@@ -3,19 +3,33 @@ package com.apiexercises.mappers;
 import com.apiexercises.models.Department;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-
 import java.util.ArrayList;
-
+/**
+ * Executes SQL queries for Department
+ */
 @Mapper
-public interface DepartmentMapper {
+public interface DepartmentMapper extends MapperTemplate{
 
-    String GET_ALL_DEPARTMENTS = "select * from departments";
-    String GET_DEPARTMENT_BY_ID = "select * from departments where id = #{id}";
+    //SQL queries
+    String GET_ALL = "select * from departments";
+    String GET_BY_ID = "select * from departments where id = #{id}";
 
-    @Select(GET_ALL_DEPARTMENTS)
-    ArrayList<Department> getAllDepartments();
+    //returns an array list of all departments
+    @Select(GET_ALL)
+    @Override
+    ArrayList<Department> getAll();
 
-    @Select(GET_DEPARTMENT_BY_ID)
-    Department getDepartmentById(int id);
+    //returns the Department that matches the id passed down from the URI through the Resource and Service
+    @Select(GET_BY_ID)
+    Department getById(String id);
+
+    //returns the Department that matches the id passed down from the URI through the Resource and Service
+    //Department uses a String for the id, so this won't be used
+    @Override
+    Department getById(int id);
+
+
+
+
 
 }

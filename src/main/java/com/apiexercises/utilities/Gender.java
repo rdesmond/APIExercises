@@ -1,6 +1,9 @@
 package com.apiexercises.utilities;
 
-public enum Gender {
-    Male, Female;
+/**
+ * This demonstrates a enum
+ */
 
+public enum Gender {
+    M, F;
 }

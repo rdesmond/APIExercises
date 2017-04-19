@@ -1,14 +1,20 @@
 package com.apiexercises.models;
 
-public class Department {
-    int dept_no;
-    String dept_name;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-    public int getDept_no() {
+/**
+ * POJO that corresponds to the departments table in the employees database
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Department {
+    private String dept_no;
+    private String dept_name;
+
+    public String getDept_no() {
         return dept_no;
     }
 
-    public void setDept_no(int dept_no) {
+    public void setDept_no(String dept_no) {
         this.dept_no = dept_no;
     }
 
