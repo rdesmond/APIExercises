@@ -17,19 +17,30 @@ public interface MapperTemplate<T extends Object> {
 
     /**
      * This method will be annotated with @Select which takes a String containing a SQL query as a parameter
+     *
      * @return : ArrayList of the object type indicated
      */
     ArrayList<T> getAll();
 
     /**
      * * This method will be annotated with @Select which takes a String containing a SQL query as a parameter
+     *
      * @param id passed down from the URI through the Resource and Service
      * @return HTTPError Exception - These methods are overridden in the implementation, based on String vs int id
      */
-    default Object getById(int id){
+    default Object getById(int id) {
         return new HTTPError(HTTPStatusCode.TEAPOT);
     }
-    default Object getByIdString(String id){
+
+    default Object getByIdString(String id) {
         return new HTTPError(HTTPStatusCode.TEAPOT);
     }
+
+    /**
+     * This method will be annotated with @Select which takes a String containing a SQL query as a parameter
+     *
+     * @param id
+     */
+    default void deleteById(int id) {}
+    default void deleteByIdString(String id) {}
 }

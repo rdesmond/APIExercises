@@ -58,9 +58,11 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
+		<finalName>api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -68,6 +70,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

@@ -31,4 +31,11 @@ public interface ServiceTemplate<T extends Object> {
     default Object getByIdString(String id){
         return new HTTPError(HTTPStatusCode.TEAPOT);
     }
+
+    /**
+     * This method calls the deleteById method on the autowired mapper object
+     * @param id passed down from the URI through the Resource
+     */
+    default void deleteById(int id) {}
+    default void deleteByIdString(String id) {}
 }

@@ -1,6 +1,7 @@
 package com.apiexercises.mappers;
 
 import com.apiexercises.models.Department;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public interface DepartmentMapper extends MapperTemplate{
     //SQL queries
     String GET_ALL = "select * from departments";
     String GET_BY_ID = "select * from departments where dept_no = #{id}";
+    String DELETE_BY_ID = "delete from departments where dept_no = #{id}";
 
     //returns an array list of all departments
     @Select(GET_ALL)
@@ -23,4 +25,10 @@ public interface DepartmentMapper extends MapperTemplate{
     @Select(GET_BY_ID)
     @Override
     Department getByIdString(String id);
+
+    //deletes the Department that matches the id passed down from the URI through the Resource and Service
+    @Delete(DELETE_BY_ID)
+    @Override
+    void deleteByIdString(String id);
+
 }

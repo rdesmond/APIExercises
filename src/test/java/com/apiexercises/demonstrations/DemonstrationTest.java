@@ -1,32 +1,25 @@
 package com.apiexercises.demonstrations;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class DemonstrationTest {
 
-    DemonstrationTest test = new DemonstrationTest();
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+    Demonstration test = new Demonstration();
 
     @Test
     public void castingTypes() throws Exception {
-
-    }
+        Assert.assertEquals(200, test.castingTypes(25.5));
+   }
 
     @Test
     public void masterOfFlow() throws Exception {
+        Assert.assertEquals(0, test.masterOfFlow(test));
     }
 
     @Test
     public void varArgsSummation() throws Exception {
+        Assert.assertEquals(22, test.varArgsSummation(5,6,9,2));
     }
 
 }

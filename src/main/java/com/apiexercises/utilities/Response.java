@@ -31,7 +31,12 @@ public class Response<T extends Object> {
         this.data = data;
         this.message = setMessage(status);
     }
-    //Constructor used when only status and message are needed
+    //Constructor used when only status and custom message are needed
+    public Response(HTTPStatusCode status, String message){
+        this.status = status;
+        this.message = message;
+    }
+    //Constructor used when only status and pre-selected message are needed
     public Response(HTTPStatusCode status){
         this.status = status;
         this.message = setMessage(status);

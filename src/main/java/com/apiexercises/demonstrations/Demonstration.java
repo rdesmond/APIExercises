@@ -15,18 +15,18 @@ Method Demonstrations for review purposes that weren't otherwise needed for this
  **/
 
 public class Demonstration {
-    private double d1, d2;
-    private byte b1, b2;
-    private int i1, i2;
-    private char c1, c2;
+    private double d1=0, d2=0;
+    private byte b1=0, b2=0;
+    private int i1=0, i2=0;
+    private char c1=0, c2=0;
     private String string1 = "String 1", string2 = "String 2";
-    private boolean boo1, boo2;
+    private boolean boo1 = true, boo2 = true;
     private Object object1, object2;
 
 
 //Method that casts 4 data types
     //uses a try-catch statement to return an error message if unsuccessful
-    public int castingTypes(double d1, Object object1) {
+    public int castingTypes(double d1) {
         try {
             //double to int
             i1 = (int) d1;
@@ -34,8 +34,6 @@ public class Demonstration {
             b1 = (byte) i1;
             //byte to char
             c1 = (char) b1;
-            //Object to String
-            string1 = (String) object1;
             return 200;
         } catch (Exception e) {
             return 418;

@@ -6,6 +6,7 @@ import com.apiexercises.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class DepartmentResource extends ResourceTemplate{
         }
     }
 
-    //calls the service method and assigns the returned ArrayList to the data parameter in the Response controller
+    //calls the service method and assigns the returned object to the data parameter in the Response controller
     @RequestMapping("/{id}")
     @Override
     public Response getByIdString(@PathVariable(value="id")String id){
@@ -46,4 +47,12 @@ public class DepartmentResource extends ResourceTemplate{
             //add in some if statements with errors
             return new Response(OK, department);
         }
+
+    //calls the service method and returns a Response object with a custom message
+    @RequestMapping(path="/{id}", method=RequestMethod.DELETE)
+    @Override
+    public Response deleteByIdString(@PathVariable(value="id")String id){
+        service.deleteByIdString(id);
+        return new Response(OK, "Successfully Deleted");
+    }
 }

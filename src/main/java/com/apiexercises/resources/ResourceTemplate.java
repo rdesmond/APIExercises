@@ -34,4 +34,15 @@ public abstract class ResourceTemplate {
         return new HTTPError(HTTPStatusCode.TEAPOT);
     }
 
+    /**
+     * This method calls the deleteById method on the service and passes it as a parameter to the Response controller
+     * @param id received as a parameter in the URI
+     * @return HTTPError Exception - These methods are overridden in the implementation, based on String vs int id
+     */
+    Object deleteById(@PathVariable(value="id")int id){
+        return new HTTPError(HTTPStatusCode.TEAPOT);
+    }
+    Object deleteByIdString(@PathVariable(value="id")String id){
+        return new HTTPError(HTTPStatusCode.TEAPOT);
+    }
 }
