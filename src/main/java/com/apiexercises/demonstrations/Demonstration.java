@@ -13,7 +13,6 @@ Method Demonstrations for review purposes that weren't otherwise needed for this
 
  - Demonstrate the Use of VarArgs
  **/
-
 public class Demonstration {
     private double d1=0, d2=0;
     private byte b1=0, b2=0;
@@ -48,6 +47,11 @@ public class Demonstration {
         if i2 is less than 1000(but greater than 100) it will break the loop and return i1+i2
     if i2 was less than 100, it will skip the loop and return i1+i2
     */
+ 
+    // RYAN: this all looks great but I'm not sure about "Demonstration demo" parameter below.
+    // is it being used anywhere? If not, I'd remove it. Also, it seems a little strange maybe that it
+    // takes an object of type Demonstration as it's in the Demonstration class. There could be a use case
+    // for it but I'm not seeing it at the moment.
     public int masterOfFlow(Demonstration demo){
         if (boo2) return i2;
         else if (i2 >=100){
